@@ -26,7 +26,50 @@ app.get('/',function(req,res){
 // handle the post to the form
 app.post('/calc',function(req,res){
 
-	var favcolor = (req.body.radiocolor);
+	var favcolor1 = (req.body.radiocolor1);
+	var favcolor2 = (req.body.radiocolor2);
+	var favcolor3 = (req.body.radiocolor3);
+	var favcolor = "color"; 
+	var red=0;
+	var green=0;
+	var blue=0; 
+
+	if (favcolor1 == "red") {
+		red +=1;
+	}
+	if (favcolor2 == "red") {
+		red +=1;
+	}
+	if (favcolor3 == "red") {
+		red +=1; 
+	}
+	if (favcolor1 == "green") {
+		green +=1;
+	}
+	if (favcolor2 == "green") {
+		green +=1;
+	}
+	if (favcolor3 == "green") {
+		green +=1; 
+	}
+	if (favcolor1 == "blue") {
+		blue +=1;
+	}
+	if (favcolor2 == "blue") {
+		blue +=1;
+	}
+	if (favcolor3 == "blue") {
+		blue +=1; 
+	}
+
+
+	
+	if (red >= 2)
+		{favcolor = "red";}
+	else if (green >= 2)
+		{favcolor = "green";}
+	else {favcolor = "blue";}
+
 
 	var data = {
 			favcolor: favcolor
