@@ -128,19 +128,19 @@ app.post('/calc',function(req,res){
 	
 	switch (songscore) {
 		case red:
-			sigsong = "Red";
+			sigsong = "Baby Got Back";
 			break; 
 		case green:
-			sigsong = "Green";
+			sigsong = "Friends in Low Places";
 			break; 
 		case blue:
-			sigsong = "Blue";
+			sigsong = "Don't Stop Believing";
 			break; 
 		case yellow:
-			sigsong = "Yellow";
+			sigsong = "Summer Nights";
 			break;
 		case purple:
-			sigsong = "Purple";
+			sigsong = "Bohemian Rhapsody";
 			break;  
 	} 
 	
