@@ -22,15 +22,19 @@ app.get('/',function(req,res){
 // handle the post to the form
 app.post('/calc',function(req,res){
 
-	var favcolor1 = (req.body.radiocolor1);
-	var favcolor2 = (req.body.radiocolor2);
-	var favcolor3 = (req.body.radiocolor3);
-	var favcolor = "color"; 
+	var sigsong1 = (req.body.radiocolor1);
+	var sigsong2 = (req.body.radiocolor2);
+	var sigsong3 = (req.body.radiocolor3);
+	var sigsong4 = (req.body.radiocolor4);
+	var sigsong5 = (req.body.radiocolor5);
+	var sigsong = "some song"; 
 	var red=0;
 	var green=0;
 	var blue=0; 
+	var yellow=0;
+	var purple=0; 
 
-	switch (favcolor1) {
+	switch (sigsong1) {
 		case "red":
 			red +=1;
 			break;
@@ -40,9 +44,15 @@ app.post('/calc',function(req,res){
 		case "blue":
 			blue +=1;
 			break;
+		case "yellow":
+			yellow +=1;
+			break;
+		case "purple":
+			purple +=1;
+			break; 
 	}
 
-	switch (favcolor2) {
+	switch (sigsong2) {
 		case "red":
 			red +=1;
 			break;
@@ -52,9 +62,15 @@ app.post('/calc',function(req,res){
 		case "blue":
 			blue +=1;
 			break;
+		case "yellow":
+			yellow +=1;
+			break;
+		case "purple":
+			purple +=1;
+			break; 
 	}
 
-	switch (favcolor3) {
+	switch (sigsong3) {
 		case "red":
 			red +=1;
 			break;
@@ -64,17 +80,73 @@ app.post('/calc',function(req,res){
 		case "blue":
 			blue +=1;
 			break;
+		case "yellow":
+			yellow +=1;
+			break;
+		case "purple":
+			purple +=1;
+			break; 
 	}
+
+	switch (sigsong4) {
+		case "red":
+			red +=1;
+			break;
+		case "green":
+			green +=1;
+			break;
+		case "blue":
+			blue +=1;
+			break;
+		case "yellow":
+			yellow +=1;
+			break;
+		case "purple":
+			purple +=1;
+			break; 
+	}
+
+	switch (sigsong5) {
+		case "red":
+			red +=1;
+			break;
+		case "green":
+			green +=1;
+			break;
+		case "blue":
+			blue +=1;
+			break;
+		case "yellow":
+			yellow +=1;
+			break;
+		case "purple":
+			purple +=1;
+			break; 
+	}
+
+	var songscore = Math.max(red, green, blue, yellow, purple); 
 	
-	if (red >= 2)
-		{favcolor = "red";}
-	else if (green >= 2)
-		{favcolor = "green";}
-	else {favcolor = "blue";}
-
+	switch (songscore) {
+		case red:
+			sigsong = "Red";
+			break; 
+		case green:
+			sigsong = "Green";
+			break; 
+		case blue:
+			sigsong = "Blue";
+			break; 
+		case yellow:
+			sigsong = "Yellow";
+			break;
+		case purple:
+			sigsong = "Purple";
+			break;  
+	} 
+	
 
 	var data = {
-			favcolor: favcolor
+			sigsong: sigsong
 		}
 	
 
