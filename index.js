@@ -1,7 +1,3 @@
-/*
-	Tip Calculator
- */
-
 // bring in Express
 var express = require('express');
 var app = express();
@@ -20,7 +16,7 @@ app.use(require('body-parser').urlencoded({extended:true}));
 // --- ROUTES --- //
 
 app.get('/',function(req,res){	
-	res.render('tipForm');	
+	res.render('quizPage');	
 });
 
 // handle the post to the form
@@ -34,35 +30,41 @@ app.post('/calc',function(req,res){
 	var green=0;
 	var blue=0; 
 
-	if (favcolor1 == "red") {
-		red +=1;
-	}
-	if (favcolor2 == "red") {
-		red +=1;
-	}
-	if (favcolor3 == "red") {
-		red +=1; 
-	}
-	if (favcolor1 == "green") {
-		green +=1;
-	}
-	if (favcolor2 == "green") {
-		green +=1;
-	}
-	if (favcolor3 == "green") {
-		green +=1; 
-	}
-	if (favcolor1 == "blue") {
-		blue +=1;
-	}
-	if (favcolor2 == "blue") {
-		blue +=1;
-	}
-	if (favcolor3 == "blue") {
-		blue +=1; 
+	switch (favcolor1) {
+		case "red":
+			red +=1;
+			break;
+		case "green":
+			green +=1;
+			break;
+		case "blue":
+			blue +=1;
+			break;
 	}
 
+	switch (favcolor2) {
+		case "red":
+			red +=1;
+			break;
+		case "green":
+			green +=1;
+			break;
+		case "blue":
+			blue +=1;
+			break;
+	}
 
+	switch (favcolor3) {
+		case "red":
+			red +=1;
+			break;
+		case "green":
+			green +=1;
+			break;
+		case "blue":
+			blue +=1;
+			break;
+	}
 	
 	if (red >= 2)
 		{favcolor = "red";}
