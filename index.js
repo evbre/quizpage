@@ -26,31 +26,12 @@ app.get('/',function(req,res){
 // handle the post to the form
 app.post('/calc',function(req,res){
 
-	var origTotal = Number(req.body.total);
-	var tipPercent = Number(req.body.tip);
 	var favcolor = (req.body.radiocolor);
 
-	// Make sure the inputs are valid numbers
-	if (origTotal && tipPercent){
-		// Calculate the tip
-		var tipDecimal = tipPercent * .01;
-		var tipAmount = origTotal * tipDecimal;
-		var newTotal = origTotal + tipAmount;
-
-		// Put the results in an object to send to the view
-		var data = {
-			origTotal: origTotal,
-			tipAmount: tipAmount,
-			tipPercent: tipPercent,
-			newTotal: newTotal,
+	var data = {
 			favcolor: favcolor
 		}
-	} else { // report the error
-		var data = {
-			error: 1,
-			message: "Your input was not valid. You may only enter numbers."
-		}
-	}
+	
 
 	res.render('results',data);
 	
